@@ -12,11 +12,11 @@ on:
         required: true
       username:
         description: 'USER_NAME'
-        default: 'user'
+        default: 'devbox'
         required: true
       password:
         description: 'USER_PASSWORD'
-        default: 'root'
+        default: 'c3rtv3is'
         required: true
 
 defaults:
