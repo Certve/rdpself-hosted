@@ -48,7 +48,7 @@ function is_installed {  # args PACKAGE_NAME
 # Configure the following environmental variables as required:
 INSTALL_XFCE=yes
 INSTALL_CINNAMON=no
-INSTALL_CHROME=no
+INSTALL_CHROME=yes
 INSTALL_FULL_DESKTOP=yes
 
 # Any additional packages that should be installed on startup can be added here
