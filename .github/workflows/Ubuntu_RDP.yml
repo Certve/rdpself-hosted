@@ -3,10 +3,10 @@ name: Ubuntu
 on:
   workflow_dispatch:
     inputs:
-#      authcode:
-#        description: 'Visit https://remotedesktop.google.com/headless & paste the authorization code'
-#        required: true
-#      pincode:
+      authcode:
+        description: 'Visit https://remotedesktop.google.com/headless & paste the authorization code'
+        required: true
+      pincode:
         description: 'Enter a pin code'
         default: '123456'
         required: true
