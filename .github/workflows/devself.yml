@@ -44,7 +44,9 @@ jobs:
         sudo apt-get update
         sudo apt-get upgrade -y
     - name: Installing Desktop Environment
-      run: sudo bash Ubuntu.sh
+      run: |
+        sudo bash Ubuntu.sh
+        sudo bash xrdp_install.sh
     - name: Setting up Pinggy
       run:  bash Setup.sh "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
     - name: IP for Connect to your SSH
