@@ -55,8 +55,8 @@ jobs:
     - name: Starting Chrome Remote Desktop
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
     - name: Setting up Pinggy
-      run:  bash Setup.sh "${{ env.PINGGY_TOKEN }}" "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
+      run:  bash Setup.sh "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
     - name: IP for Connect to your SSH
-      run: bash Ip.sh "${{ github.event.inputs.username }}"
+      run: bash Ip.sh "${{ github.event.inputs.username }}" "${{ env.PINGGY_TOKEN }}"
     - name: Keep Alive
       run: ping 127.0.0.1 > null
