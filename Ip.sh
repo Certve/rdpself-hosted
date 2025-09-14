@@ -1,3 +1,8 @@
+rm -f .pinggy.log
+./pinggy --remote-management $(jq -r '.inputs.authtoken' $GITHUB_EVENT_PATH)
+./pinggy tcp 22 --log ".pinggy.log" &
+sleep 10
+echo "Pinggy Setup Completeed"
 _ERR=$(grep "command failed" < .pinggy.log)
 
 if [[ -z "$_ERR" ]]; then
