@@ -8,7 +8,7 @@ wget https://s3.ap-south-1.amazonaws.com/public.pinggy.binaries/cli/v0.2.5/linux
 chmod +x ./pinggy
 echo -e "$(jq -r '.inputs.password' $GITHUB_EVENT_PATH)\n$(jq -r '.inputs.password' $GITHUB_EVENT_PATH)" | sudo passwd "$USER"
 rm -f .pinggy.log
-./pinggy -p 443 -R0:localhost:5901  -o ServerAliveInterval=$(jq -r '.inputs.authtoken' $GITHUB_EVENT_PATH)+tcp@ap.pro.pinggy.io
+./pinggy --remote-management $(jq -r '.inputs.authtoken' $GITHUB_EVENT_PATH)
 ./pinggy tcp 22 --log ".pinggy.log" &
 sleep 10
 echo "Pinggy Setup Completeed"
