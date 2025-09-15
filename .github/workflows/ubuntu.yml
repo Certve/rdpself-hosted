@@ -49,14 +49,14 @@ jobs:
     - name: Setup Environment
       run: |
         sudo apt-get update
-        sudo apt-get upgrade
+        sudo apt-get upgrade -y
     - name: Installing Desktop Environment
       run: sudo bash Ubuntu.sh
     - name: Setting up Ngrok
-      run:  bash Setup.sh "${{ env.NGROK_TOKEN }}" "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
+      run:  bash Setup0.sh "${{ env.NGROK_TOKEN }}" "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
     - name: Starting Chrome Remote Desktop
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
     - name: IP for Connect to your SSH
-      run: bash Ip.sh "${{ github.event.inputs.username }}"
+      run: bash Ip0.sh "${{ github.event.inputs.username }}"
     - name: Keep Alive
       run: ping 127.0.0.1 > null
