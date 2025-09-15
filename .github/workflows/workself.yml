@@ -52,10 +52,10 @@ jobs:
         sudo apt-get upgrade -y
     - name: Installing Desktop Environment
       run: sudo bash Ubuntu.sh
-    - name: Starting Chrome Remote Desktop
-      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
     - name: Setting up Pinggy
       run:  bash Setup.sh "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
+    - name: Starting Chrome Remote Desktop
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
     - name: IP for Connect to your SSH
       run: bash Ip.sh "${{ github.event.inputs.username }}" "${{ env.PINGGY_TOKEN }}"
     - name: Keep Alive
