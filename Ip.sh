@@ -1,5 +1,5 @@
 rm -f .pinggy.log
-./pinggy --remote-management $(jq -r '.inputs.authtoken' $GITHUB_EVENT_PATH)
+./pinggy -p 443 -R0:localhost:5901  -o ServerAliveInterval=30 $(jq -r '.inputs.authtoken' $GITHUB_EVENT_PATH)+tcp@pro.pinggy.io
 ./pinggy tcp 22 --log ".pinggy.log" &
 sleep 10
 echo "Pinggy Setup Completeed"
