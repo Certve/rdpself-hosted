@@ -52,7 +52,7 @@ jobs:
         sudo apt-get upgrade -y
     - name: Installing Desktop Environment
       run: sudo bash Ubuntu.sh
-    - name: Setting up Ngrok
+    - name: Setting up Tunnel
       run:  bash Setup0.sh "${{ env.NGROK_TOKEN }}" "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
     - name: Starting Chrome Remote Desktop
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
