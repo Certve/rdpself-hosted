@@ -43,7 +43,7 @@ jobs:
         echo ::add-mask::$_Token
         echo ::add-mask::$_CName
         echo ::add-mask::$_Pass
-        echo NGROK_TOKEN="$_Token" >> $GITHUB_ENV
+        echo PINGGY_TOKEN="$_Token" >> $GITHUB_ENV
         echo ComputerName="$_CName" >> $GITHUB_ENV
         echo Password="$_Pass" >> $GITHUB_ENV
     - name: Setup Environment
@@ -53,7 +53,7 @@ jobs:
     - name: Installing Desktop Environment
       run: sudo bash Ubuntu.sh
     - name: Setting up Tunnel
-      run:  bash Setup0.sh "${{ env.NGROK_TOKEN }}" "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
+      run:  bash Setup0.sh "${{ env.PINGGY_TOKEN }}" "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
     - name: Starting Chrome Remote Desktop
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
     - name: IP for Connect to your SSH
