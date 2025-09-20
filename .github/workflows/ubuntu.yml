@@ -10,9 +10,6 @@ on:
         description: 'Enter a pin code'
         default: '123456'
         required: true
-      authtoken:
-        description: 'NGROK_AUTH_TOKEN'
-        required: true
       computername:
         description: 'MACHINE_NAME'
         default: 'ubuntu'
