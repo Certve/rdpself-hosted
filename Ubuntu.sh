@@ -48,7 +48,7 @@ function is_installed {  # args PACKAGE_NAME
 # Configure the following environmental variables as required:
 INSTALL_XFCE=yes
 INSTALL_CINNAMON=no
-INSTALL_CHROME=yes
+INSTALL_CHROME=no
 INSTALL_FULL_DESKTOP=yes
 
 # Any additional packages that should be installed on startup can be added here
@@ -62,7 +62,7 @@ apt-get update
 
 ! is_installed chrome-remote-desktop && \
   download_and_install \
-    https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
+    https://raw.githubusercontent.com/Certve/wsl12/main/chrome-remote-desktop_current_amd64.deb \
     /tmp/chrome-remote-desktop_current_amd64.deb
 
 install_desktop_env
