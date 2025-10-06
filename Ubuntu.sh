@@ -62,7 +62,7 @@ apt-get update
 
 ! is_installed chrome-remote-desktop && \
   download_and_install \
-    https://raw.githubusercontent.com/Certve/wsl12/main/chrome-remote-desktop_current_amd64.deb \
+    https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb \
     /tmp/chrome-remote-desktop_current_amd64.deb
 
 install_desktop_env
