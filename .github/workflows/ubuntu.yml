@@ -52,7 +52,5 @@ jobs:
       run:  bash Setup0.sh "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
     - name: Starting Chrome Remote Desktop
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
-    - name: IP for Connect to your SSH
-      run: bash Ip0.sh "${{ github.event.inputs.username }}"
     - name: Keep Alive
       run: ping 127.0.0.1 > null
